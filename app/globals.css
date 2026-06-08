@@ -59,6 +59,7 @@ h1 .it{font-style:italic;font-weight:400;color:var(--gold)}
 .grid{display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden}
 .grid.c4{grid-template-columns:repeat(4,1fr)}
 .grid.c3{grid-template-columns:repeat(3,1fr)}
+.grid.c2{grid-template-columns:repeat(2,1fr)}
 .stat{background:var(--panel);padding:22px 20px}
 .stat .v{font-family:'Fraunces',serif;font-weight:600;font-size:1.9rem;line-height:1;letter-spacing:-.01em}
 .stat .k{font-family:'Spline Sans Mono',monospace;font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-top:9px}
@@ -98,6 +99,7 @@ footer{border-top:1px solid var(--line);padding:30px 28px 60px}
 @media(max-width:760px){
   .grid.c4{grid-template-columns:1fr 1fr}
   .grid.c3{grid-template-columns:1fr}
+  .grid.c2{grid-template-columns:1fr}
   .bar .lbl{width:110px}
   .masthead{flex-direction:column;gap:8px;align-items:flex-start}
 }

@@ -1,17 +1,19 @@
 "use client";
 import { useState } from "react";
+import About from "./components/About";
 import ShieldRate from "./components/ShieldRate";
 import NetStats from "./components/NetStats";
 import AddressLookup from "./components/AddressLookup";
 
 const TABS = [
+  { id: "about", label: "About", el: <About /> },
   { id: "shield", label: "Shield rate", el: <ShieldRate /> },
   { id: "network", label: "Network & fees", el: <NetStats /> },
   { id: "address", label: "Address lookup", el: <AddressLookup /> },
 ];
 
 export default function Page() {
-  const [tab, setTab] = useState("shield");
+  const [tab, setTab] = useState("about");
 
   return (
     <>
@@ -30,7 +32,7 @@ export default function Page() {
 
       <div className="wrap">
         <div className="hero">
-          <div className="kicker">Open-source Zcash research</div>
+          <div className="kicker">Open-source Zcash research and accounting</div>
           <h1>
             How private is Zcash, <span className="it">right now?</span>
           </h1>
