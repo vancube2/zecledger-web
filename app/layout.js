@@ -1,4 +1,25 @@
 import "./globals.css";
+import { Fraunces, Spline_Sans, Spline_Sans_Mono } from "next/font/google";
+
+// Fonts are fetched at build time and served from this origin. Nothing is
+// requested from Google when someone visits, so no visitor's IP or user agent
+// is handed to a third party. For a privacy dashboard that matters: the fact
+// that you are reading it is itself information worth not leaking.
+const fraunces = Fraunces({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
+const splineSans = Spline_Sans({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+});
+const splineSansMono = Spline_Sans_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+});
 
 export const metadata = {
   title: "ZecLedger — Zcash Privacy Dashboard",
@@ -8,14 +29,10 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Spline+Sans+Mono:wght@400;500;600&family=Spline+Sans:wght@300;400;500;600&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html
+      lang="en"
+      className={`${fraunces.variable} ${splineSans.variable} ${splineSansMono.variable}`}
+    >
       <body>{children}</body>
     </html>
   );

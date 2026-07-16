@@ -71,11 +71,12 @@ export default function About() {
 
       <div className="privacy-note" style={{ marginBottom: 20 }}>
         <b>How it keeps you safe.</b> The public dashboard only ever touches
-        public data, so there is nothing sensitive to leak. Anything involving
-        your keys runs locally in the tool you control, never on a server. The
-        code is open source, so you do not have to trust a claim, you can read
-        it. And every research figure is reproducible from the methods we
-        publish.
+        public data, so there is nothing sensitive to leak. Your browser makes no
+        requests to any third party while you are here, not even for fonts, so
+        the fact that you read this page is not shared with anyone. Anything
+        involving your keys runs locally in the tool you control, never on a
+        server. The code is open source, so you do not have to trust a claim, you
+        can read it.
       </div>
 
       <div className="card">
@@ -106,7 +107,7 @@ export default function About() {
 function Use({ label, live, children }) {
   return (
     <div style={{ borderLeft: "2px solid var(--line)", paddingLeft: 16 }}>
-      <div style={{ fontFamily: "'Spline Sans Mono',monospace", fontSize: ".72rem", letterSpacing: ".06em", textTransform: "uppercase", color: "var(--paper)", marginBottom: 5, display: "flex", alignItems: "center", gap: 10 }}>
+      <div style={{ fontFamily: "var(--font-mono),monospace", fontSize: ".72rem", letterSpacing: ".06em", textTransform: "uppercase", color: "var(--paper)", marginBottom: 5, display: "flex", alignItems: "center", gap: 10 }}>
         {label}
         <span style={{ fontSize: ".58rem", padding: "2px 8px", borderRadius: 3, background: live ? "rgba(63,185,132,.15)" : "rgba(233,185,73,.15)", color: live ? "var(--green)" : "var(--gold)", letterSpacing: ".08em" }}>
           {live ? "LIVE" : "COMING"}

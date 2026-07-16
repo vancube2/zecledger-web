@@ -46,4 +46,6 @@ changing any UI code.
 
 - Shield-rate figures are **samples** of recent transactions and are **floors, not totals**, because fully private (z→z) transactions cannot be seen from outside the shielded pool.
 - Network figures are live from Blockchair and refresh about once a minute.
-- No keys, no logins, no tracking. Public data only.
+- No keys, no logins, no tracking, and no third-party requests from your browser.
+  Fonts are self-hosted at build time rather than loaded from Google, so visiting
+  this dashboard does not tell anyone else that you visited it. Public data only.
