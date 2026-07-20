@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="Timeline of the Zcash transition from the Orchard bug to Ironwood activation, May to July 2026">
+  <defs>
+    <style>
+      .bg{fill:#121613;}
+      .axis{stroke:#252D26;stroke-width:1;}
+      .tick{stroke:#252D26;stroke-width:1;}
+      .dot{fill:#0B0E0C;stroke:#E9B949;stroke-width:2;}
+      .dot-red{fill:#0B0E0C;stroke:#E5564B;stroke-width:2;}
+      .dot-green{fill:#0B0E0C;stroke:#3FB984;stroke-width:2;}
+      .date{font-family:'Spline Sans Mono',ui-monospace,monospace;font-size:11px;fill:#8A938A;letter-spacing:0.5px;}
+      .label{font-family:'Spline Sans',system-ui,sans-serif;font-size:12.5px;fill:#ECEAE0;font-weight:500;}
+      .sub{font-family:'Spline Sans',system-ui,sans-serif;font-size:11px;fill:#8A938A;}
+      .cap{font-family:'Spline Sans Mono',ui-monospace,monospace;font-size:10px;fill:#8A938A;letter-spacing:1.5px;text-transform:uppercase;}
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="720" height="300" rx="10"/>
+
+  <text class="cap" x="28" y="34">THE ORCHARD BUG TO IRONWOOD · 2026</text>
+
+  <!-- axis -->
+  <line class="axis" x1="40" y1="150" x2="680" y2="150"/>
+
+  <!-- May 29: bug found (red) -->
+  <line class="tick" x1="90" y1="145" x2="90" y2="155"/>
+  <circle class="dot-red" cx="90" cy="150" r="6"/>
+  <text class="date" x="90" y="128" text-anchor="middle">MAY 29</text>
+  <text class="label" x="90" y="180" text-anchor="middle">Bug found</text>
+  <text class="sub" x="90" y="196" text-anchor="middle">Orchard</text>
+  <text class="sub" x="90" y="210" text-anchor="middle">soundness flaw</text>
+
+  <!-- June 2/3: NU6.2 patch (green) -->
+  <line class="tick" x1="215" y1="145" x2="215" y2="155"/>
+  <circle class="dot-green" cx="215" cy="150" r="6"/>
+  <text class="date" x="215" y="128" text-anchor="middle">JUN 2</text>
+  <text class="label" x="215" y="180" text-anchor="middle">NU6.2 patch</text>
+  <text class="sub" x="215" y="196" text-anchor="middle">emergency</text>
+  <text class="sub" x="215" y="210" text-anchor="middle">hard fork</text>
+
+  <!-- July 15: Zakura (gold) -->
+  <line class="tick" x1="380" y1="145" x2="380" y2="155"/>
+  <circle class="dot" cx="380" cy="150" r="6"/>
+  <text class="date" x="380" y="128" text-anchor="middle">JUL 15</text>
+  <text class="label" x="380" y="180" text-anchor="middle">Zakura 1.0.0</text>
+  <text class="sub" x="380" y="196" text-anchor="middle">new node,</text>
+  <text class="sub" x="380" y="210" text-anchor="middle">Ironwood-ready</text>
+
+  <!-- July 18: zcashd halt (red) -->
+  <line class="tick" x1="510" y1="145" x2="510" y2="155"/>
+  <circle class="dot-red" cx="510" cy="150" r="6"/>
+  <text class="date" x="510" y="128" text-anchor="middle">JUL 18</text>
+  <text class="label" x="510" y="180" text-anchor="middle">zcashd halts</text>
+  <text class="sub" x="510" y="196" text-anchor="middle">block</text>
+  <text class="sub" x="510" y="210" text-anchor="middle">3,417,100</text>
+
+  <!-- July 28: Ironwood (gold, larger) -->
+  <line class="tick" x1="640" y1="143" x2="640" y2="157"/>
+  <circle class="dot" cx="640" cy="150" r="8" stroke-width="2.5"/>
+  <text class="date" x="640" y="126" text-anchor="middle" style="fill:#E9B949;">JUL 28</text>
+  <text class="label" x="640" y="180" text-anchor="middle" style="fill:#E9B949;">Ironwood</text>
+  <text class="sub" x="640" y="196" text-anchor="middle">block</text>
+  <text class="sub" x="640" y="210" text-anchor="middle">3,428,143</text>
+
+  <text class="cap" x="40" y="270" style="fill:#8A938A;">RED · CONTAINMENT</text>
+  <text class="cap" x="240" y="270" style="fill:#8A938A;">GREEN · FIX</text>
+  <text class="cap" x="400" y="270" style="fill:#8A938A;">GOLD · WHAT COMES NEXT</text>
+</svg>

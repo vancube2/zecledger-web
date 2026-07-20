@@ -127,3 +127,98 @@ footer{border-top:1px solid var(--line);padding:30px 28px 60px}
 .iw-k{font-family:var(--font-mono),monospace;font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
 .iw-v{font-family:var(--font-mono),monospace;font-size:.76rem;color:var(--paper)}
 @media(max-width:640px){.iw-snap{grid-template-columns:1fr}}
+
+/* ============================================================
+   Archive
+   Appended for the /archive index and entry pages. Uses the
+   existing tokens (--ink, --gold, --line, --paper, --dim, mono
+   and display faces) so it reads as one product, not a bolt-on.
+   ============================================================ */
+
+/* index list */
+.arc-list{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.arc-item{
+  display:grid;grid-template-columns:170px 1fr;gap:28px;
+  padding:26px 4px;border-bottom:1px solid var(--line);
+  text-decoration:none;color:inherit;transition:background .18s ease;
+}
+.arc-item:hover{background:rgba(233,185,73,.03)}
+.arc-date{
+  font-family:var(--font-mono),monospace;font-size:.66rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--dim);padding-top:6px;
+}
+.arc-title{
+  font-family:var(--font-display),Georgia,serif;font-weight:600;
+  font-size:1.5rem;line-height:1.15;letter-spacing:-.01em;color:var(--paper);
+  margin-bottom:8px;transition:color .18s ease;
+}
+.arc-item:hover .arc-title{color:var(--gold)}
+.arc-summary{color:#b7bcb4;font-size:.96rem;line-height:1.6;max-width:60ch;margin-bottom:12px}
+.arc-tags{display:flex;gap:8px;flex-wrap:wrap}
+.arc-tag{
+  font-family:var(--font-mono),monospace;font-size:.58rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--dim);border:1px solid var(--line);
+  border-radius:3px;padding:3px 9px;
+}
+
+/* entry article */
+.arc-article{max-width:720px;margin:0 auto;padding:48px 0 90px}
+.arc-meta{
+  display:flex;gap:12px;align-items:center;flex-wrap:wrap;
+  font-family:var(--font-mono),monospace;font-size:.66rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--dim);margin-bottom:20px;
+}
+.arc-h1{
+  font-family:var(--font-display),Georgia,serif;font-weight:900;
+  font-size:clamp(2rem,4.5vw,3rem);line-height:1.04;letter-spacing:-.02em;
+  color:var(--paper);margin-bottom:22px;
+}
+.arc-lede{
+  font-family:var(--font-display),Georgia,serif;font-style:italic;font-weight:400;
+  font-size:1.28rem;line-height:1.5;color:var(--gold);margin-bottom:38px;
+}
+
+/* rendered markdown */
+.arc-prose{color:#cdd0c8;font-size:1.05rem;line-height:1.8}
+.arc-prose > *:first-child{margin-top:0}
+.arc-prose h2{
+  font-family:var(--font-display),Georgia,serif;font-weight:700;
+  font-size:1.5rem;letter-spacing:-.01em;color:var(--paper);
+  margin:44px 0 14px;line-height:1.2;
+}
+.arc-prose h3{
+  font-family:var(--font-mono),monospace;font-size:.8rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--gold);margin:34px 0 12px;
+}
+.arc-prose p{margin:0 0 20px}
+.arc-prose a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(233,185,73,.35)}
+.arc-prose a:hover{border-bottom-color:var(--gold)}
+.arc-prose ul,.arc-prose ol{margin:0 0 20px;padding-left:24px}
+.arc-prose li{margin:0 0 9px}
+.arc-prose strong{color:var(--paper);font-weight:600}
+.arc-prose blockquote{
+  border-left:2px solid var(--gold);margin:0 0 22px;padding:4px 0 4px 22px;
+  color:#b7bcb4;font-style:italic;
+}
+.arc-prose code{
+  font-family:var(--font-mono),monospace;font-size:.86em;
+  background:var(--panel2);border:1px solid var(--line);border-radius:4px;
+  padding:1px 6px;color:var(--gold);
+}
+.arc-prose hr{border:none;border-top:1px solid var(--line);margin:38px 0}
+
+/* sources */
+.arc-sources{margin-top:48px;padding-top:26px;border-top:1px solid var(--line)}
+.arc-sources h4{
+  font-family:var(--font-mono),monospace;font-size:.66rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--dim);margin-bottom:14px;
+}
+.arc-sources ol{padding-left:20px;color:var(--dim);font-size:.86rem;line-height:1.7}
+.arc-sources li{margin-bottom:7px}
+.arc-sources a{color:var(--gold);text-decoration:none}
+.arc-sources a:hover{text-decoration:underline}
+
+@media(max-width:680px){
+  .arc-item{grid-template-columns:1fr;gap:8px}
+  .arc-date{padding-top:0}
+}
