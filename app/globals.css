@@ -327,3 +327,58 @@ footer{border-top:1px solid var(--line);padding:30px 28px 60px}
   .live{display:none}
   .cd-clock{gap:8px}
 }
+
+/* ============================================================
+   Node client comparison
+   ============================================================ */
+.nd-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:22px}
+.nd-card{
+  border:1px solid var(--line);border-radius:12px;padding:24px 26px;
+  background:linear-gradient(180deg,var(--panel),var(--ink));
+}
+.nd-green{border-top:2px solid var(--green)}
+.nd-gold{border-top:2px solid var(--gold)}
+.nd-red{border-top:2px solid var(--red)}
+.nd-ours{border:1px dashed var(--line);background:var(--panel2)}
+
+.nd-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px;gap:12px}
+.nd-name{
+  display:block;font-family:var(--font-display),Georgia,serif;font-weight:600;
+  font-size:1.5rem;line-height:1;color:var(--paper);letter-spacing:-.01em;
+}
+.nd-by{
+  display:block;font-family:var(--font-mono),monospace;font-size:.6rem;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-top:7px;
+}
+.nd-status{
+  font-family:var(--font-mono),monospace;font-size:.56rem;letter-spacing:.12em;
+  text-transform:uppercase;padding:4px 10px;border-radius:4px;white-space:nowrap;
+}
+.nd-status-green{background:rgba(63,185,132,.14);color:var(--green)}
+.nd-status-gold{background:rgba(233,185,73,.14);color:var(--gold)}
+.nd-status-red{background:rgba(229,86,75,.14);color:var(--red)}
+.nd-status-soon{background:rgba(138,147,138,.14);color:var(--dim)}
+
+.nd-rows{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:4px 0;margin-bottom:16px}
+.nd-row{display:flex;justify-content:space-between;gap:12px;padding:8px 0;font-family:var(--font-mono),monospace;font-size:.74rem}
+.nd-k{color:var(--dim);letter-spacing:.06em}
+.nd-v{color:var(--paper);text-align:right}
+.nd-yes{color:var(--green)}
+.nd-no{color:var(--red)}
+.nd-dim{color:var(--dim)}
+
+.nd-detail{font-size:.88rem;line-height:1.6;color:#b7bcb4;margin:0 0 12px}
+.nd-detail-k{font-family:var(--font-mono),monospace;font-size:.66rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold);margin-right:6px}
+.nd-note{font-size:.86rem;line-height:1.6;color:var(--dim);margin:14px 0 0;padding-top:14px;border-top:1px solid var(--line)}
+
+.nd-ours-body{font-size:.9rem;line-height:1.65;color:#b7bcb4;margin:0 0 14px}
+.nd-ours-tag{font-family:var(--font-mono),monospace;font-size:.62rem;letter-spacing:.06em;color:var(--dim)}
+
+.nd-foot{
+  font-family:var(--font-mono),monospace;font-size:.66rem;line-height:1.75;
+  color:var(--dim);max-width:88ch;margin-top:6px;padding-top:16px;border-top:1px solid var(--line);
+}
+
+@media(max-width:760px){
+  .nd-grid{grid-template-columns:1fr}
+}

@@ -6,6 +6,7 @@ import Ironwood from "./Ironwood";
 import ShieldRate from "./ShieldRate";
 import NetStats from "./NetStats";
 import AddressLookup from "./AddressLookup";
+import Nodes from "./Nodes";
 
 // Ironwood mainnet activation. The real trigger is a block height, 3,428,143;
 // the time is approximate ("around 8am Eastern, 28 July 2026"), so the countdown
@@ -16,6 +17,7 @@ const ACTIVATION_BLOCK = "3,428,143";
 // Tools live as tabs below the composed story. Address lookup in particular is a
 // tool you operate, not a section you scroll past, so it belongs here.
 const TOOLS = [
+  { id: "nodes", label: "Node clients", el: <Nodes /> },
   { id: "network", label: "Network & fees", el: <NetStats /> },
   { id: "shield", label: "Shield rate", el: <ShieldRate /> },
   { id: "address", label: "Address lookup", el: <AddressLookup /> },
