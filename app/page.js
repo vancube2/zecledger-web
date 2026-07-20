@@ -1,12 +1,14 @@
 "use client";
 import { useState } from "react";
 import About from "./components/About";
+import Ironwood from "./components/Ironwood";
 import ShieldRate from "./components/ShieldRate";
 import NetStats from "./components/NetStats";
 import AddressLookup from "./components/AddressLookup";
 
 const TABS = [
   { id: "about", label: "About", el: <About /> },
+  { id: "ironwood", label: "Ironwood ·  NU6.3", el: <Ironwood /> },
   { id: "shield", label: "Shield rate", el: <ShieldRate /> },
   { id: "network", label: "Network & fees", el: <NetStats /> },
   { id: "address", label: "Address lookup", el: <AddressLookup /> },

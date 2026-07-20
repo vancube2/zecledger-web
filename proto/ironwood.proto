@@ -1,0 +1,55 @@
+// A minimal subset of zcash/lightwallet-protocol's service.proto, carrying only
+// the two calls the Ironwood readiness check needs. Field numbers and the
+// ShieldedProtocol enum values match the upstream definition exactly, because
+// the wire format depends on them.
+//
+// Upstream: https://github.com/zcash/lightwallet-protocol/blob/v0.5.0/walletrpc/service.proto
+
+syntax = "proto3";
+package cash.z.wallet.sdk.rpc;
+
+message Empty {}
+
+message LightdInfo {
+    string version = 1;
+    string vendor = 2;
+    bool   taddrSupport = 3;
+    string chainName = 4;
+    uint64 saplingActivationHeight = 5;
+    string consensusBranchId = 6;
+    uint64 blockHeight = 7;
+    string gitCommit = 8;
+    string branch = 9;
+    string buildDate = 10;
+    string buildUser = 11;
+    uint64 estimatedHeight = 12;
+    string zcashdBuild = 13;
+    string zcashdSubversion = 14;
+    string donationAddress = 15;
+    string upgradeName = 16;
+    uint64 upgradeHeight = 17;
+    string lightwalletProtocolVersion = 18;
+}
+
+enum ShieldedProtocol {
+    sapling = 0;
+    orchard = 1;
+    ironwood = 2;
+}
+
+message GetSubtreeRootsArg {
+    uint32 startIndex = 1;
+    ShieldedProtocol shieldedProtocol = 2;
+    uint32 maxEntries = 3;
+}
+
+message SubtreeRoot {
+    bytes rootHash = 2;
+    bytes completingBlockHash = 3;
+    uint64 completingBlockHeight = 4;
+}
+
+service CompactTxStreamer {
+    rpc GetLightdInfo(Empty) returns (LightdInfo) {}
+    rpc GetSubtreeRoots(GetSubtreeRootsArg) returns (stream SubtreeRoot) {}
+}
