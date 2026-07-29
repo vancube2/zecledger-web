@@ -1,4 +1,5 @@
 import "./globals.css";
+import BootGate from "./components/BootGate";
 import { Fraunces, Spline_Sans, Spline_Sans_Mono } from "next/font/google";
 
 // Fonts are fetched at build time and served from this origin. Nothing is
@@ -22,7 +23,7 @@ const splineSansMono = Spline_Sans_Mono({
 });
 
 export const metadata = {
-  title: "ZecLedger — Zcash Privacy Dashboard",
+  title: "ZecLedger, the portfolio of Zcash",
   description:
     "Live Zcash shield-rate, network and fee stats, and transparent address lookup. A public, no-keys research dashboard.",
 };
@@ -33,7 +34,7 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${fraunces.variable} ${splineSans.variable} ${splineSansMono.variable}`}
     >
-      <body>{children}</body>
+      <body><BootGate>{children}</BootGate></body>
     </html>
   );
 }

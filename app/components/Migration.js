@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import MigrationFlow from "./MigrationFlow";
 
 // The pool-migration panel. Reads the shaped data from /api/pools (which fetches
 // CipherScan server-side) and tells the migration story in three layers:
@@ -117,7 +116,6 @@ export default function Migration() {
 
   return (
     <div className="mig">
-      <MigrationFlow />
       {/* Layer 1: the movement */}
       <div className="mig-hero">
         <div className="mig-flow">

@@ -1,11 +1,12 @@
-import Home from "./components/Home";
-import { getAllEntries } from "../lib/archive";
+import Shell from "./components/Shell";
+import Terminal from "./components/Terminal";
 
-// Server component: reads the latest archive entry at build time for the teaser,
-// then hands off to the interactive client shell. Everything that needs the
-// filesystem stays here; everything interactive lives in Home.
-export default function Page() {
-  const entries = getAllEntries();
-  const latest = entries[0] || null;
-  return <Home latest={latest} />;
+export const metadata = { title: "ZecLedger, the portfolio of Zcash" };
+
+export default function PreviewHome() {
+  return (
+    <Shell wide>
+      <Terminal />
+    </Shell>
+  );
 }
