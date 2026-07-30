@@ -62,22 +62,52 @@ export default function Nodes() {
     if (!globeReady) return;
     const g = globeRef.current;
     if (!g) return;
-    // Disable zoom; set a starting view.
     try {
       if (g.controls && g.controls()) g.controls().enableZoom = false;
       g.pointOfView({ lat: 22, lng: 10, altitude: 2.2 });
     } catch {}
-    // Spin manually by advancing longitude each tick. Reliable across versions,
-    // and a user drag simply moves it; spinning continues from wherever it lands.
+
+    // Manual spin, but it yields while the user is interacting. A pointer down
+    // pauses it; releasing resumes after a short beat, so a drag never fights
+    // the auto-rotation.
     let lng = 10;
-    const iv = setInterval(() => {
+    let interacting = false;
+    let resumeTimer = null;
+
+    const tick = setInterval(() => {
+      if (interacting) return;
       lng = (lng + 0.3) % 360;
       try {
         const pov = g.pointOfView();
+        // keep lng in sync with wherever the user left it
+        lng = pov.lng;
+        lng = (lng + 0.3) % 360;
         g.pointOfView({ lat: pov.lat, lng, altitude: pov.altitude }, 0);
       } catch {}
     }, 50);
-    return () => clearInterval(iv);
+
+    const el = wrapRef.current;
+    const onDown = () => {
+      interacting = true;
+      if (resumeTimer) clearTimeout(resumeTimer);
+    };
+    const onUp = () => {
+      if (resumeTimer) clearTimeout(resumeTimer);
+      resumeTimer = setTimeout(() => { interacting = false; }, 1500);
+    };
+    if (el) {
+      el.addEventListener("pointerdown", onDown);
+      window.addEventListener("pointerup", onUp);
+    }
+
+    return () => {
+      clearInterval(tick);
+      if (resumeTimer) clearTimeout(resumeTimer);
+      if (el) {
+        el.removeEventListener("pointerdown", onDown);
+        window.removeEventListener("pointerup", onUp);
+      }
+    };
   }, [globeReady]);
 
   const points = locations.map((l) => ({ lat: l.lat, lng: l.lon, count: l.nodeCount || 1, country: l.country, ping: l.avgPingMs }));
