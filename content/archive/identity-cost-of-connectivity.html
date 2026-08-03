@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Identity Cost of Connectivity</title>
+<style>
+  :root{
+    --ink:#1a1a1a; --soft:#4a4a4a; --line:#e6e3dc; --paper:#fbfaf7;
+    --accent:#b8860b; --accent2:#1c3d5a; --band:#f4f1ea;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:Georgia,'Times New Roman',serif; line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:720px; margin:0 auto; padding:48px 24px 80px;}
+  .kicker{
+    font-family:'Helvetica Neue',Arial,sans-serif; text-transform:uppercase;
+    letter-spacing:3px; font-size:12px; color:var(--accent); font-weight:700; margin-bottom:18px;
+  }
+  h1{
+    font-size:40px; line-height:1.18; margin:0 0 18px; font-weight:700; letter-spacing:-0.4px;
+  }
+  .standfirst{
+    font-size:20px; color:var(--soft); font-style:italic; line-height:1.6;
+    margin:0 0 30px; padding-bottom:30px; border-bottom:2px solid var(--line);
+  }
+  h2{
+    font-size:15px; font-family:'Helvetica Neue',Arial,sans-serif; text-transform:uppercase;
+    letter-spacing:2px; color:var(--accent2); margin:48px 0 6px; font-weight:700;
+  }
+  h3{font-size:21px; margin:30px 0 8px; font-weight:700;}
+  p{margin:0 0 20px; font-size:18px;}
+  .lead:first-letter{
+    float:left; font-size:64px; line-height:52px; padding:4px 10px 0 0; color:var(--accent); font-weight:700;
+  }
+  .abstract{
+    background:var(--band); border-left:3px solid var(--accent);
+    padding:22px 26px; margin:0 0 20px; font-size:16px; color:var(--soft);
+  }
+  .abstract strong{color:var(--ink);}
+  blockquote{
+    margin:30px 0; padding:8px 0 8px 26px; border-left:3px solid var(--accent2);
+    font-size:22px; line-height:1.5; color:var(--accent2); font-style:italic;
+  }
+  .fig{margin:34px 0; text-align:center;}
+  .fig figcaption{
+    font-family:'Helvetica Neue',Arial,sans-serif; font-size:13px; color:var(--soft);
+    margin-top:10px; letter-spacing:0.3px;
+  }
+  ol,ul{font-size:18px; padding-left:22px;}
+  li{margin-bottom:12px;}
+  .refs{font-size:15px; color:var(--soft); line-height:1.6;}
+  .refs li{margin-bottom:9px;}
+  .divider{
+    text-align:center; color:var(--accent); letter-spacing:8px; margin:44px 0; font-size:16px;
+  }
+  .end{
+    font-family:'Helvetica Neue',Arial,sans-serif; font-size:15px; color:var(--soft);
+    border-top:2px solid var(--line); padding-top:24px; margin-top:44px; font-style:italic;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="kicker">Privacy &middot; Surveillance &middot; Research</div>
+  <h1>The Identity Cost of Connectivity</h1>
+  <p class="standfirst">Mandatory SIM registration now governs how most of the world gets online. A review of the evidence on whether it works, what it costs, and whether the tools people use to escape it actually protect them.</p>
+
+  <!-- HERO SVG -->
+  <figure class="fig">
+    <svg width="100%" viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A phone connected to a database by an identity link">
+      <rect width="720" height="300" fill="#1c3d5a"/>
+      <g opacity="0.08">
+        <circle cx="120" cy="80" r="1.5" fill="#fff"/><circle cx="200" cy="140" r="1.5" fill="#fff"/>
+        <circle cx="300" cy="60" r="1.5" fill="#fff"/><circle cx="420" cy="120" r="1.5" fill="#fff"/>
+        <circle cx="560" cy="70" r="1.5" fill="#fff"/><circle cx="620" cy="180" r="1.5" fill="#fff"/>
+        <circle cx="90" cy="220" r="1.5" fill="#fff"/><circle cx="500" cy="230" r="1.5" fill="#fff"/>
+      </g>
+      <!-- phone -->
+      <rect x="150" y="90" width="90" height="150" rx="12" fill="#fbfaf7" stroke="#b8860b" stroke-width="2"/>
+      <circle cx="195" cy="215" r="7" fill="#1c3d5a"/>
+      <rect x="165" y="108" width="60" height="86" rx="4" fill="#e6e3dc"/>
+      <!-- identity link line -->
+      <line x1="240" y1="165" x2="470" y2="165" stroke="#b8860b" stroke-width="2" stroke-dasharray="7 6"/>
+      <circle cx="355" cy="165" r="16" fill="#1c3d5a" stroke="#b8860b" stroke-width="2"/>
+      <text x="355" y="171" text-anchor="middle" font-family="Georgia,serif" font-size="16" fill="#b8860b">ID</text>
+      <!-- database -->
+      <ellipse cx="530" cy="120" rx="45" ry="14" fill="#fbfaf7" stroke="#b8860b" stroke-width="2"/>
+      <path d="M485 120 v70 a45 14 0 0 0 90 0 v-70" fill="none" stroke="#b8860b" stroke-width="2"/>
+      <ellipse cx="530" cy="155" rx="45" ry="14" fill="none" stroke="#b8860b" stroke-width="1.5" opacity="0.6"/>
+      <ellipse cx="530" cy="190" rx="45" ry="14" fill="none" stroke="#b8860b" stroke-width="1.5" opacity="0.6"/>
+      <text x="530" y="235" text-anchor="middle" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12" letter-spacing="2" fill="#fbfaf7" opacity="0.8">STATE REGISTRY</text>
+    </svg>
+    <figcaption>Registration binds a device, and its owner, to a searchable record at the point of sale.</figcaption>
+  </figure>
+
+  <h2>Abstract</h2>
+  <div class="abstract">
+    Mandatory SIM registration, the legal requirement to prove one's identity before activating a mobile connection, is in force in over 150 countries. This review synthesizes evidence from human rights organizations, industry bodies, peer-reviewed security research, and legal scholarship to assess three questions: whether registration achieves its stated security aims, what privacy costs it imposes and on whom, and whether the technical tools individuals use to circumvent it actually protect them. The evidence indicates that registration is <strong>widely adopted yet poorly supported by proof of efficacy</strong>, that its privacy costs fall disproportionately on populations with the weakest legal safeguards, and that popular circumvention tools <strong>address only one layer of a multi-layer exposure</strong>. The review closes with policy, technical, and individual recommendations.
+  </div>
+
+  <h2>1 &middot; Introduction</h2>
+  <p class="lead">Access to a mobile network increasingly requires the surrender of identity. In much of the world, a person cannot activate a SIM without presenting an identity document, and in a rising number of jurisdictions, biometric data. Because a mobile device continuously reports its approximate location and mediates a large share of modern communication, binding that device to a legal identity at the point of sale creates a durable, searchable link between a person and their movements and contacts.</p>
+  <p>This review examines that arrangement critically. It asks not whether registration is common, it plainly is, but whether it works, what it costs, and whether the tools people adopt to escape it deliver the protection they promise.</p>
+
+  <h2>2 &middot; Methodology</h2>
+  <p>This is a secondary-source review, synthesizing existing literature rather than generating original measurement. Sources were gathered across four categories to triangulate findings and reduce the bias of any single perspective:</p>
+  <ol>
+    <li>Civil-society and human-rights research, for documentation of harms and legal challenges</li>
+    <li>Mobile-industry data, for adoption figures and the industry's own efficacy assessments</li>
+    <li>Peer-reviewed security research, for technical evidence on device identifiers and circumvention tools</li>
+    <li>Legal and policy scholarship, for the jurisprudence on proportionality and for reform proposals</li>
+  </ol>
+  <p>Findings were included where at least one authoritative source supported them, with preference for claims corroborated across categories. The principal limitation is that this method inherits the coverage and biases of the underlying literature and includes no primary field measurement, a point returned to in Section 6.</p>
+
+  <h2>3 &middot; Scope and rationale</h2>
+  <p>Mandatory SIM registration requires identification, and sometimes biometrics, to purchase or activate a prepaid mobile SIM. Human-rights documentation records 155 countries with such laws as of January 2020, and industry figures put the total at around 160 by the end of that year, with the number rising year on year since. The near-universal justification is security: the premise that linking numbers to identities aids the investigation and deterrence of crime.</p>
+  <p>That premise is testable, and the evidence for it is weak.</p>
+
+  <h2>4 &middot; Findings</h2>
+
+  <h3>4.1 &nbsp;Registration is poorly supported by evidence of efficacy</h3>
+  <p>The mobile industry's own trade body concluded in 2016 that there is no empirical evidence that mandatory registration directly reduces crime. National experience supports this. Mexico introduced registration in 2009 and repealed it three years later, remaining the only country to have done so, after it failed to reduce crime or improve prosecution. Elsewhere, registration requirements produced black markets in fraudulently registered SIMs, with criminals reported to forge fingerprints to defeat biometric checks, undermining the very traceability the policy promised. Notably, several democracies, among them Canada, Ireland, the Netherlands, and the Czech Republic, reviewed such proposals and rejected them on these grounds.</p>
+
+  <blockquote>A policy adopted on a security rationale for which its own implementers can supply little proof.</blockquote>
+
+  <h3>4.2 &nbsp;The privacy cost is real and unequally distributed</h3>
+  <p>Where registration does not reliably deliver security, it reliably delivers a database linking identities to communications. It lets a state identify a SIM's owner and infer who is communicating at a given time, enabling generalized surveillance that falls hardest on journalists, activists, and marginalized groups.</p>
+  <p>The harm intensifies where legal protection is thin. Industry-linked data indicates a large share of countries with mandatory registration, and a majority of such countries in Africa, lacked data-protection legislation governing the collected data. Mass-registration deadlines have forced millions to choose between surrendering data and losing service, in one case affecting close to two million citizens, and operators have disconnected more than a million unregistered users elsewhere. Because prepaid subscriptions, the target of these laws, account for 94 percent of mobile subscriptions in Africa, the privacy burden concentrates on those least able to seek legal redress.</p>
+
+  <!-- BAR SVG: prepaid share -->
+  <figure class="fig">
+    <svg width="100%" viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Prepaid share of mobile subscriptions by region">
+      <text x="0" y="24" font-family="'Helvetica Neue',Arial,sans-serif" font-size="14" font-weight="700" fill="#1a1a1a" letter-spacing="1">PREPAID SHARE OF MOBILE SUBSCRIPTIONS</text>
+      <text x="0" y="44" font-family="'Helvetica Neue',Arial,sans-serif" font-size="12" fill="#4a4a4a">Registration burdens fall on prepaid users. Prepaid dominates where safeguards are weakest.</text>
+      <g font-family="'Helvetica Neue',Arial,sans-serif" font-size="13" fill="#1a1a1a">
+        <!-- Africa 94 -->
+        <text x="0" y="82">Africa</text>
+        <rect x="90" y="70" width="564" height="16" fill="#e6e3dc"/>
+        <rect x="90" y="70" width="530" height="16" fill="#b8860b"/>
+        <text x="628" y="82">94%</text>
+        <!-- Asia 79 -->
+        <text x="0" y="112">Asia</text>
+        <rect x="90" y="100" width="564" height="16" fill="#e6e3dc"/>
+        <rect x="90" y="100" width="445" height="16" fill="#1c3d5a"/>
+        <text x="628" y="112">79%</text>
+        <!-- Europe 50 -->
+        <text x="0" y="142">Europe</text>
+        <rect x="90" y="130" width="564" height="16" fill="#e6e3dc"/>
+        <rect x="90" y="130" width="282" height="16" fill="#1c3d5a"/>
+        <text x="628" y="142">50%</text>
+        <!-- N America 21 -->
+        <text x="0" y="172">N. America</text>
+        <rect x="90" y="160" width="564" height="16" fill="#e6e3dc"/>
+        <rect x="90" y="160" width="118" height="16" fill="#1c3d5a"/>
+        <text x="628" y="172">21%</text>
+      </g>
+      <text x="0" y="212" font-family="'Helvetica Neue',Arial,sans-serif" font-size="11" fill="#4a4a4a">Source: GSMA figures, via Privacy International.</text>
+    </svg>
+    <figcaption>The privacy cost of registration concentrates where prepaid use is highest.</figcaption>
+  </figure>
+
+  <h3>4.3 &nbsp;Circumvention tools address only one layer</h3>
+  <p>Individuals seeking to avoid the identity link commonly combine two technologies: embedded SIMs, which can be provisioned remotely without in-person registration, and privacy-preserving digital payment systems, including cryptocurrencies that use zero-knowledge proofs to conceal the parties and amount of a transaction. In principle, a provider that collects no identity, paid with a currency that reveals none, yields a purchase with no identifying data on either side.</p>
+  <p>The peer-reviewed and technical evidence shows this protection is partial. The cellular protocol itself requires every device to transmit persistent identifiers, the subscriber identity and the hardware identity, to each tower it uses; these cannot be withheld, because they are intrinsic to authentication and routing. No such connection is anonymous at the network layer. Tower connections generate location data sufficient to place a device within a neighborhood, and surveillance devices that impersonate towers can harvest these identifiers directly. A 2025 study of the eSIM ecosystem, presented at a leading security symposium, found that resellers could access subscriber identifiers through provisioning interfaces, placing identifying data with intermediaries beyond the traditional operator. Independent testing has also found that some providers do not disclose the jurisdictions through which traffic is routed.</p>
+
+  <blockquote>Circumvention removes the identity link at the point of purchase. It does not remove network-layer identification, location exposure, or routing opacity.</blockquote>
+
+  <p>Treating purchase-level anonymity as comprehensive anonymity is, in the language of security research, a form of security theater.</p>
+
+  <h2>5 &middot; The research gap</h2>
+  <p>Two bodies of literature exist in relative isolation. The first, from human-rights and policy researchers, documents the surveillance harms of registration. The second, from security researchers, documents technical vulnerabilities in mobile identifiers and the provisioning ecosystem.</p>
+  <p>What is missing is work connecting them: systematic, measured assessment of whether the circumvention tools individuals actually adopt meaningfully reduce the specific harm registration creates, under realistic threat models, rather than in principle. The efficacy of registration is under-evidenced; the efficacy of its popular countermeasures is equally under-measured. In that shadow, both mandate and countermeasure are adopted on faith, and users may protect one layer while believing they protect all.</p>
+
+  <h2>6 &middot; Discussion and limitations</h2>
+  <p>The two central findings sit in productive tension. Registration is a poorly evidenced mandate imposing real, unequal costs; its common countermeasures are themselves only partial. Neither rests on strong measured evidence, which is the central problem.</p>
+  <p>This review is limited by its method. As a synthesis of secondary sources, it inherits their coverage gaps and cannot substitute for primary measurement. Adoption and efficacy figures derive substantially from industry and advocacy sources with their own perspectives; these were triangulated where possible but not eliminated. The circumvention analysis reflects a fast-moving technical literature and may age.</p>
+
+  <h2>7 &middot; Recommendations</h2>
+
+  <h3>Policy</h3>
+  <ol>
+    <li>Require an evidence and proportionality test before any registration mandate. High courts in several jurisdictions have held that identity mandates must meet necessity and proportionality standards; one regional high court invalidated a broad data-retention regime on precisely these grounds. Registration should demonstrate a legitimate aim achieved by the least intrusive means, before adoption.</li>
+    <li>Enact data-protection law as a precondition, not an afterthought. Where a majority of mandating countries lack such frameworks, the sequencing is backward.</li>
+    <li>Impose strict retention limits and independent oversight, replacing excessive retention and access without judicial review.</li>
+    <li>Provide carve-outs for at-risk groups, since blanket application disproportionately burdens journalists, activists, and whistleblowers.</li>
+  </ol>
+
+  <h3>Technical and industry</h3>
+  <ol>
+    <li>Mandate routing transparency, so users know which jurisdictions carry their traffic.</li>
+    <li>Minimize identifier exposure in provisioning, so intermediaries hold the least data necessary.</li>
+    <li>Advance privacy-preserving registration designs. Peer-reviewed proposals exist for cryptographically secure registration that satisfies regulatory aims while removing centralized single points of failure, and deserve serious evaluation.</li>
+  </ol>
+
+  <h3>Individual</h3>
+  <ol>
+    <li>Adopt a layered, threat-model-appropriate approach: private payment where identity linkage at purchase is the concern, network-layer protections such as reputable virtual private networks for traffic and routing, and device configuration to limit unnecessary data sharing.</li>
+    <li>Calibrate expectations to the actual protection. The most important individual measure is accurate understanding, knowing which layer a tool protects, and not mistaking partial anonymity for full anonymity.</li>
+  </ol>
+
+  <h2>8 &middot; Conclusion</h2>
+  <p>Mandatory SIM registration has spread across most of the world's countries on a security rationale its own implementers struggle to evidence, while imposing privacy costs that fall most heavily on those least protected by law. The tools individuals use to escape it are genuine but partial, effective at the point of purchase and silent at the network layer. The deepest problem is evidentiary: both the mandate and its countermeasures are adopted largely on faith.</p>
+
+  <blockquote>The danger is not only surveillance, but the false belief that one has escaped it.</blockquote>
+
+  <div class="divider">&bull; &bull; &bull;</div>
+
+  <h2>References</h2>
+  <ol class="refs">
+    <li>Privacy International, <em>SIM Card Registration</em> and <em>Timeline of SIM Card Registration Laws</em>.</li>
+    <li>GSM Association, <em>Access to Mobile Services and Proof of Identity</em> (2019, 2020, 2021); <em>Mandatory registration of prepaid SIMs</em>, Mobile Policy Handbook.</li>
+    <li>GSMA, <em>Mandatory real-name registration of prepaid SIM card users: considerations for policymakers</em> (2016).</li>
+    <li>Cybereason, Malicious Life, <em>SIM Registration: Security, or Surveillance?</em></li>
+    <li>Motallebighomi et&nbsp;al., <em>eSIMplicity or eSIMplification? Privacy and Security Risks in the eSIM Ecosystem</em>, USENIX Security Symposium (2025).</li>
+    <li>Derechos Digitales, <em>Data Retention and Registration of Mobile Phones</em>.</li>
+    <li>Court of Justice of the European Union, judgment invalidating the Data Retention Directive.</li>
+    <li>Legal scholarship on SIM Registration reform and the tests of necessity and proportionality.</li>
+    <li>Peer-reviewed proposal for a blockchain-based privacy-preserving SIM registration scheme, <em>Journal of Cybersecurity and Privacy</em> (MDPI).</li>
+    <li>Independent technical analyses of eSIM anonymity layers and provider routing transparency.</li>
+  </ol>
+
+  <p class="end">Sources are cited by name and origin so readers can locate and evaluate them independently. Full citations available on request. I write about privacy technology and how it holds up under scrutiny.</p>
+
+</div>
+</body>
+</html>
